@@ -10,7 +10,7 @@ class CourseCard extends Component {
         <Poster>
           {course.title}
         </Poster>
-        <Actions />
+        <Actions {...this.props} />
       </Wrap>
     )
   }

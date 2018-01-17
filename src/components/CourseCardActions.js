@@ -3,13 +3,15 @@ import styled from 'styled-components'
 
 class CourseCardActions extends Component {
   render() {
+    const { commentsByCourseId, course } = this.props
+    const comments = commentsByCourseId[course.id] || []
     return (
       <Wrap>
         <Button>
-          12赞
+          {course.likes}赞
         </Button>
         <Button>
-          5评论
+          {comments.length}评论
         </Button>
       </Wrap>
     )
