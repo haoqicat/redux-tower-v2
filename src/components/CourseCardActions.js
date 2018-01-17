@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import history from '../utils/history'
 
 class CourseCardActions extends Component {
   render() {
     const { commentsByCourseId, course, like } = this.props
-    const comments = commentsByCourseId[course.id] || []
+    const { id, likes } = course
+    const comments = commentsByCourseId[id] || []
     return (
       <Wrap>
-        <Button onClick={() => like(course.id)}>
-          {course.likes}赞
+        <Button onClick={() => like(id)}>
+          {likes}赞
         </Button>
-        <Button>
+        <Button onClick={() => history.push(`/c/${id}`)}>
           {comments.length}评论
         </Button>
       </Wrap>
