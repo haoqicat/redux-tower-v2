@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import HomeContainer from '../containers/HomeContainer'
 import CourseContainer from '../containers/CourseContainer'
+import Header from '../components/Header'
+import '../assets/global.css'
 import {
   BrowserRouter as Router,
   Route
@@ -11,6 +13,7 @@ class Main extends Component {
     return (
       <Router>
         <div>
+          <Header />
           <Route exact path='/' component={HomeContainer} />
           <Route path='/c/:id' component={CourseContainer} />
         </div>
