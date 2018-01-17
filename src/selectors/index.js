@@ -8,3 +8,10 @@ export const getCommentsByCourseId = state => {
     return obj
   }, {})
 }
+
+export const getCoursesById = state => {
+  return getCourses(state).reduce((obj, t) => {
+    obj[t.id] = t
+    return obj
+  }, {})
+}
