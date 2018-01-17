@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 class CourseCardActions extends Component {
   render() {
-    const { commentsByCourseId, course } = this.props
+    const { commentsByCourseId, course, like } = this.props
     const comments = commentsByCourseId[course.id] || []
     return (
       <Wrap>
-        <Button>
+        <Button onClick={() => like(course.id)}>
           {course.likes}赞
         </Button>
         <Button>
