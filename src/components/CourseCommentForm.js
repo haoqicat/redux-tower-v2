@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Input from 'material-ui/Input'
 import Button from 'material-ui/Button'
+import shortid from 'shortid'
 
 class CommentForm extends Component {
   state = {
@@ -26,9 +27,12 @@ class CommentForm extends Component {
   handleClick = e=> {
     e.preventDefault()
     const { body, user } = this.state
+    const id = shortid()
     const comment = {
       body,
-      user
+      id,
+      user,
+      course: this.props.id
     }
     console.log('comment', comment)
     this.setState({

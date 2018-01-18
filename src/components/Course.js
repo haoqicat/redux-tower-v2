@@ -21,7 +21,7 @@ class Course extends Component {
         </Upper>
         <Lower>
           <CommentWrap>
-            <CommentForm />
+            <CommentForm id={id} />
             <CommentList comments={comments} />
           </CommentWrap>
         </Lower>
