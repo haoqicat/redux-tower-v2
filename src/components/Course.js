@@ -10,7 +10,8 @@ class Course extends Component {
       commentsByCourseId,
       match,
       coursesById,
-      addComment
+      addComment,
+      deleteCmt
     } = this.props
     const { id } = match.params
     const comments = commentsByCourseId[id] || []
@@ -23,7 +24,7 @@ class Course extends Component {
         <Lower>
           <CommentWrap>
             <CommentForm id={id} addComment={addComment} />
-            <CommentList comments={comments} />
+            <CommentList comments={comments} deleteCmt={deleteCmt} />
           </CommentWrap>
         </Lower>
       </Wrap>

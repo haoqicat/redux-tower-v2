@@ -26,6 +26,8 @@ const all = (state = initialState, action) => {
   switch(action.type) {
     case types.ADD_COMMENT:
       return [...state, action.comment]
+    case types.DELETE_COMMENT:
+      return state.filter(t => t.id !== action.id)
     default:
       return state
   }

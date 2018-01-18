@@ -4,12 +4,12 @@ import Delete from 'material-ui-icons/Delete'
 
 class CommentList extends Component {
   render() {
-    const { comments } = this.props
+    const { comments, deleteCmt } = this.props
     const list = comments.map(t => (
       <Comment key={t.id}>
         <User>{t.user}</User>
         <Body>{t.body}</Body>
-        <Action>
+        <Action onClick={() => deleteCmt(t.id)}>
           <Delete />
         </Action>
       </Comment>

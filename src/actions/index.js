@@ -6,6 +6,11 @@ export const like = id => ({
 })
 
 export const addComment = comment => ({
-  type: 'ADD_COMMENT',
+  type: types.ADD_COMMENT,
   comment
+})
+
+export const deleteCmt = id => ({
+  type: types.DELETE_COMMENT,
+  id
 })
