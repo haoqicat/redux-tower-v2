@@ -5,13 +5,18 @@ import Comment from 'material-ui-icons/Comment'
 import history from '../utils/history'
 
 class CourseCardActions extends Component {
+  handleClick = id => {
+    this.props.like(id)
+    this.props.showHeart()
+  }
+
   render() {
-    const { commentsByCourseId, course, like } = this.props
+    const { commentsByCourseId, course } = this.props
     const { id, likes } = course
     const comments = commentsByCourseId[id] || []
     return (
       <Wrap>
-        <Button onClick={() => like(id)}>
+        <Button onClick={() => this.handleClick(id)}>
           <ThumbUp />
           {likes}
         </Button>
