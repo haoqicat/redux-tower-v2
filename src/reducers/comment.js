@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import * as types from '../constants/ActionTypes'
 
 const initialState = [
   {
@@ -23,6 +24,8 @@ const initialState = [
 
 const all = (state = initialState, action) => {
   switch(action.type) {
+    case types.ADD_COMMENT:
+      return [...state, action.comment]
     default:
       return state
   }

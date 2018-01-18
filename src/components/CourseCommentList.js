@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Delete from 'material-ui-icons/Delete'
 
 class CommentList extends Component {
   render() {
@@ -8,6 +9,9 @@ class CommentList extends Component {
       <Comment key={t.id}>
         <User>{t.user}</User>
         <Body>{t.body}</Body>
+        <Action>
+          <Delete />
+        </Action>
       </Comment>
     ))
     return <Wrap>{list}</Wrap>
@@ -33,4 +37,14 @@ const User = styled.div`
 
 const Body = styled.div`
   flex-grow: 1;
+`
+
+const Action = styled.div`
+  cursor: pointer;
+  svg {
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
 `

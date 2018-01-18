@@ -34,7 +34,7 @@ class CommentForm extends Component {
       user,
       course: this.props.id
     }
-    console.log('comment', comment)
+    this.props.addComment(comment)
     this.setState({
       body: '',
       user: ''
