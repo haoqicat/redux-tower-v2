@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Actions from './CourseCardActions'
+import Card from 'material-ui/Card'
 
 class CourseCard extends Component {
   render() {
@@ -18,7 +19,7 @@ class CourseCard extends Component {
 
 export default CourseCard
 
-const Wrap = styled.div`
+const Wrap = styled(Card)`
   width: 300px;
 `
 

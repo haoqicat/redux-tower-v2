@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import CommentList from './CourseCommentList'
+import Card from 'material-ui/Card'
+import CommentForm from './CourseCommentForm'
 
 class Course extends Component {
   render() {
@@ -19,6 +21,7 @@ class Course extends Component {
         </Upper>
         <Lower>
           <CommentWrap>
+            <CommentForm />
             <CommentList comments={comments} />
           </CommentWrap>
         </Lower>
@@ -50,7 +53,7 @@ const Lower = styled.div`
   flex-grow: 1;
 `
 
-const CommentWrap = styled.div`
+const CommentWrap = styled(Card)`
   background: #fff;
   min-height: 10vh;
   width: 600px;

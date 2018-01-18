@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import ThumbUp from 'material-ui-icons/ThumbUp'
+import Comment from 'material-ui-icons/Comment'
 import history from '../utils/history'
 
 class CourseCardActions extends Component {
@@ -10,10 +12,12 @@ class CourseCardActions extends Component {
     return (
       <Wrap>
         <Button onClick={() => like(id)}>
-          {likes}赞
+          <ThumbUp />
+          {likes}
         </Button>
         <Button onClick={() => history.push(`/c/${id}`)}>
-          {comments.length}评论
+          <Comment />
+          {comments.length}
         </Button>
       </Wrap>
     )
@@ -34,5 +38,13 @@ const Button = styled.div`
   padding: 2px 9px;
   :hover {
     cursor: pointer;
+  }
+  line-height: 26px;
+  svg {
+    fill: #212121;
+    width: 16px;
+    height: 16px;
+    margin: 5px;
+    margin-left: 0;
   }
 `
