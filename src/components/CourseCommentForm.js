@@ -13,9 +13,9 @@ class CommentForm extends Component {
         <CommentInput
           placeholder="评论"
         />
-        <StyledButton raised>
+        <Button raised color="accent" >
           评论
-        </StyledButton>
+        </Button>
       </Wrap>
     )
   }
@@ -34,8 +34,4 @@ const CommentInput = styled(Input)`
 
 const NameInput = styled(Input)`
   margin-right: 10px;
-`
-
-const StyledButton = styled(Button)`
-  color: white;
 `
